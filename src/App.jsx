@@ -81,6 +81,7 @@ function App() {
     <div className={styles.singleButton}>
         <Button
           onClick={() => console.log('Clicked')}
+          text='Test'
           variant="secondary"
           icon={AiOutlineSelect}
           onlyIcon={true}

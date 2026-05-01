@@ -7,7 +7,6 @@ const Button = ({
   type = 'button',
   iconPosition = 'right',
   onClick,
-  text = '',
   isDisabled = false,
   variant = 'primary',
   isLoading = false,
@@ -16,6 +15,7 @@ const Button = ({
   size = false,
   icon = null,
   onlyIcon = false,
+  text = '',
 }) => {
   const buttonStyles = cn({
     [styles.button]: true,
@@ -33,6 +33,7 @@ const Button = ({
     [styles.onlyIcon]: onlyIcon 
   })
   const Icon = icon
+  const buttonText = onlyIcon === true ? '' : text
   return (
     <button
       type={type}
@@ -45,7 +46,7 @@ const Button = ({
       }}
     >
       {icon && iconPosition === 'left' && <Icon className={iconStyle}/>} 
-      <span>{loadingText || text}</span> 
+      <span>{loadingText || buttonText}</span> 
       {icon && iconPosition === 'right' && <Icon className={iconStyle}/>} 
       {isLoading &&  <AiOutlineLoading3Quarters className={iconStyle} />}
      </button>
