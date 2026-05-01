@@ -4,7 +4,15 @@
 }
 .section {
   margin: 20px 0;
+  display: flex;
 }
+ .singleButton {
+  margin: 2px;
+  display: inline-block;
+    &.block {
+      width: 170px;
+    }
+ }
 
 h2 {
   font-size: 38px;

@@ -1,14 +1,24 @@
 @use "sass:color";
 @use "/src/styles/params.scss";
-
+ @keyframes spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
 .button {
   border-radius: 8px;
-  padding: 8px 12px;
+  position: relative;
+  align-items: center;
+  font-family: params.$primaryFont;
+  padding: 8px 30px;
   &Primary {
     background-color: params.$primary;
     color: color.scale(params.$primary, $lightness: -70%);
     &:hover {
-      background-color: color.scale(params.$primary, $lightness: 20%);;
+      background-color: color.scale(params.$primary, $lightness: 20%);
       color: color.scale(params.$primary, $lightness: -50%);
     }
   }
@@ -19,5 +29,49 @@
       background-color: color.scale(params.$secondary, $lightness: 20%);;
       color: color.scale(params.$secondary, $lightness: -50%);
     }
+   }
+  &:disabled {
+      background-color: grey;
+      cursor: not-allowed;
+      color: color.scale(grey, $lightness: -50%);
+  }
+  &.block {
+  width: 100%;
+  padding: 8px 5px;
+  justify-content:center;
+  margin: 0px;
+  }
+  &.sized {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  &.onlyIcon {
+    padding: 5px 5px;
   }
 }
+
+.icon{
+  position: absolute;
+  top: 13px;
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  &.Loading {
+  right: 10px;
+  animation: spin 1s linear infinite;
+  }
+  &PositionRight {
+  right: 10px;
+  }
+  &PositionLeft {
+  left: 10px;
+  }
+  &.onlyIcon {
+  position: static;
+  width: 30px;
+  height: 30px;
+  }
+}
+
+
