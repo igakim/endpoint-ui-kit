@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import styles from './Modal.module.scss';
-import { FiX } from 'react-icons/fi';
+import { AiOutlineClose } from 'react-icons/ai';
 
 /**
  *
@@ -40,7 +40,7 @@ const Modal = ({
     <div className={dismissStyles} onClick={dismiss}>
       <div className={modalStyles}>
         <button type="button" onClick={onClose} className={styles.close}>
-          <FiX />
+          <AiOutlineClose />
         </button>
         {children}
       </div>
