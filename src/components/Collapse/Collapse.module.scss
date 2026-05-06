@@ -1,0 +1,18 @@
+@use '/src/styles/params.scss';
+
+.collapse {
+  font-family: params.$primaryFont;
+  border: 1px solid #808080;
+  border-radius: 8px;
+}
+
+.collapseTitleContent {
+  cursor: pointer;
+  background-color: #dcdcdc;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #808080;
+  display: flex;
+}
+.bodyClass {
+  max-height: auto;
+}
