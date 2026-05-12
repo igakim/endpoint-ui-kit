@@ -1,0 +1,61 @@
+@use 'sass:color';
+@use '/src/styles/params.scss';
+
+.parentContainer {
+  position: relative;
+  font-family: params.$primaryFont;
+}
+.popoverContainer {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding-bottom: 12px;
+  padding-top: 12px;
+  border-radius: 10px;
+  position: absolute;
+}
+.popoverItems {
+  cursor: pointer;
+  padding: 12px 30px;
+  background-color: #ffffff;
+  &:hover {
+    background-color: #e8e8e8;
+  }
+}
+.popoverButton {
+  height: 30px;
+  width: 30px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  &Small {
+    font-size: 10px;
+    height: 25px;
+    width: 25px;
+  }
+  &Large {
+    font-size: 16px;
+    height: 40px;
+    width: 40px;
+  }
+  &Primary {
+    background-color: params.$primary;
+    color: color.scale(params.$primary, $lightness: -70%);
+    &:hover {
+      background-color: color.scale(params.$primary, $lightness: 20%);
+      color: color.scale(params.$primary, $lightness: -50%);
+    }
+  }
+  &Secondary {
+    background-color: params.$secondary;
+    color: color.scale(params.$secondary, $lightness: -70%);
+    &:hover {
+      background-color: color.scale(params.$secondary, $lightness: 20%);
+      color: color.scale(params.$secondary, $lightness: -50%);
+    }
+  }
+}
+.icon {
+  font-size: 1.4em;
+  fill: currentColor;
+}
