@@ -26,15 +26,17 @@ const Collapse = ({
   };
   return (
     <div className={styles.collapse}>
-      {items.map((i) => {
+      {items.map((i, index) => {
         return (
           <CollapseContainer
             key={i.key}
             onClick={onClick(i.key)}
             title={i.title}
             isActive={isActive(i.key)}
+            index={index}
+            itemsLength={items.length}
           >
-            <CollapseBody content={i.content} isActive={isActive(i.key)} />
+            <CollapseBody content={i.content} isActive={isActive(i.key)} contentClass={styles.contentClass}/>
           </CollapseContainer>
         );
       })}

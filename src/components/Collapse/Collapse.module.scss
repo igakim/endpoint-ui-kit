@@ -3,6 +3,7 @@
 .collapse {
   font-family: params.$primaryFont;
   border: 1px solid #808080;
+  overflow: hidden;
   border-radius: 8px;
 }
 
@@ -10,9 +11,19 @@
   cursor: pointer;
   background-color: #dcdcdc;
   padding-bottom: 5px;
-  border-bottom: 1px solid #808080;
   display: flex;
+  padding-left: 5px;
+  padding-top: 5px;
+  border-bottom: 1px solid #949191;
+  &.last {
+    border-bottom: 0px;
+    &.active {
+  border-bottom: 1px solid #949191;
+    }
+  }
 }
-.bodyClass {
-  max-height: auto;
+.contentClass {
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
